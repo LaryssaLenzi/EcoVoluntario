@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,8 +8,116 @@
     <link rel="icon" type="image/x-icon" href="src/img/nature.png">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <h1>Plataforma EcoVoluntário</h1>
-    <p>Bem-vindo ao nosso projeto de voluntariado ambiental!</p>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">🌱 EcoVoluntário</a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="active">Voluntários</a></li>
+                <li><a href="instituicao.html">Para Instituições</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header>
+        <h1>Plataforma EcoVoluntário</h1>
+        <p>Conectando pessoas para transformar o meio ambiente através do voluntariado.</p>
+    </header>
+
+    <main class="container">
+        <section class="acoes-section">
+            <h2>Ações Ambientais Disponíveis</h2>
+
+            <div class="filtro-container">
+                <label for="filtro-cidade">Filtrar por Cidade:</label>
+                <select id="filtro-cidade">
+                    <option value="todos">Mostrar todas as cidades</option>
+                    <option value="Alegre">Alegre</option>
+                    <option value="Vitória">Vitória</option>
+                    <option value="Vila Velha">Vila Velha</option>
+                    <option value="Serra">Serra</option>
+                </select>
+            </div>
+
+            <div class="cards-grid" id="cards-grid">
+                <div class="card" data-cidade="Alegre">
+                    <h3>Reflorestamento do Caparaó</h3>
+                    <p><strong>Data:</strong> 01/06/2026</p>
+                    <p><strong>Cidade:</strong> Alegre - ES</p>
+                    <p><strong>Local:</strong> Entorno do Parque Nacional</p>
+                    <p>Plantio de árvores nativas para proteção de nascentes da região.</p>
+                    <button class="btn-card" data-acao-id="reflorestamento-alegre">Quero me inscrever</button>
+                </div>
+
+                <div class="card" data-cidade="Alegre">
+                    <h3>Coleta Seletiva no Centro</h3>
+                    <p><strong>Data:</strong> 10/06/2026</p>
+                    <p><strong>Cidade:</strong> Alegre - ES</p>
+                    <p><strong>Local:</strong> Praça Seis de Janeiro</p>
+                    <p>Mutirão de conscientização sobre o descarte correto de resíduos.</p>
+                    <button class="btn-card" data-acao-id="coleta-alegre">Quero me inscrever</button>
+                </div>
+
+                <div class="card" data-cidade="Vitória">
+                    <h3>Limpeza da Praia</h3>
+                    <p><strong>Data:</strong> 05/06/2026</p>
+                    <p><strong>Cidade:</strong> Vitória - ES</p>
+                    <p><strong>Local:</strong> Praia de Camburi</p>
+                    <p>Retirada de microplásticos e conscientização dos banhistas.</p>
+                    <button class="btn-card" data-acao-id="praia">Quero me inscrever</button>
+                </div>
+
+                <div class="card" data-cidade="Vila Velha">
+                    <h3>Plantio no Parque</h3>
+                    <p><strong>Data:</strong> 14/06/2026</p>
+                    <p><strong>Cidade:</strong> Vila Velha - ES</p>
+                    <p><strong>Local:</strong> Parque Botânico</p>
+                    <p>Reflorestamento de áreas degradadas com espécies nativas.</p>
+                    <button class="btn-card" data-acao-id="plantio">Quero me inscrever</button>
+                </div>
+
+                <div class="card" data-cidade="Serra">
+                    <h3>Oficina de Reciclagem</h3>
+                    <p><strong>Data:</strong> 21/06/2026</p>
+                    <p><strong>Cidade:</strong> Serra - ES</p>
+                    <p><strong>Local:</strong> Centro Comunitário</p>
+                    <p>Aprenda a separar resíduos corretamente e criar compostagem.</p>
+                    <button class="btn-card" data-acao-id="reciclagem">Quero me inscrever</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="modal-inscricao" class="modal">
+        <div class="modal-content">
+            <span class="btn-fechar">&times;</span>
+            <h2>Faça sua Inscrição</h2>
+            <p>Junte-se a nós nessa ação pelo meio ambiente!</p>
+            
+            <form id="form-voluntario">
+                <div class="form-group">
+                    <label for="nome">Nome Completo:</label>
+                    <input type="text" id="nome" required placeholder="Digite seu nome">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" required placeholder="seu.email@exemplo.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="acao-visivel">Ação Selecionada:</label>
+                    <input type="text" id="acao-visivel" readonly style="background-color: #e8f5e9; color: #2e7d32; font-weight: bold; border: 1px solid #81c784;">
+                </div>
+
+                <button type="submit" class="btn-enviar">Confirmar Inscrição</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
+
 </html>
