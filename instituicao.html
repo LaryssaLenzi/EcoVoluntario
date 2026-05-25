@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Instituição - EcoVoluntário</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">🌱 EcoVoluntário</a>
+            <ul class="nav-menu">
+                <li><a href="index.html">Voluntários</a></li>
+                <li><a href="instituicao.html" class="active">Para Instituições</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header>
+        <h1>Área das Instituições</h1>
+        <p>Cadastre sua ONG ou Empresa e publique ações ambientais para engajar voluntários.</p>
+    </header>
+
+    <main class="container">
+        <section class="inscricao-section">
+            <h2>Cadastrar Instituição</h2>
+            <p>Preencha os dados abaixo para criar o perfil da sua organização.</p>
+            
+            <form id="form-instituicao">
+                <div class="form-group">
+                    <label for="nome-inst">Nome da Instituição/ONG:</label>
+                    <input type="text" id="nome-inst" required placeholder="Ex: Instituto Planeta Verde">
+                </div>
+
+                <div class="form-group">
+                    <label for="cnpj">CNPJ (ou registro institucional):</label>
+                    <input type="text" id="cnpj" required placeholder="00.000.000/0001-00">
+                </div>
+
+                <div class="form-group">
+                    <label for="responsavel">Nome do Responsável:</label>
+                    <input type="text" id="responsavel" required placeholder="Quem responderá pela conta">
+                </div>
+
+                <div class="form-group">
+                    <label for="email-inst">E-mail de Contato:</label>
+                    <input type="email" id="email-inst" required placeholder="contato@instituicao.org">
+                </div>
+
+                <div class="form-group">
+                    <label for="causa">Foco Principal de Atuação:</label>
+                    <select id="causa" required>
+                        <option value="">Selecione...</option>
+                        <option value="marinha">Preservação Marinha / Praias</option>
+                        <option value="reflorestamento">Reflorestamento e Árvores</option>
+                        <option value="reciclagem">Coleta Seletiva e Reciclagem</option>
+                        <option value="educacao">Educação Ambiental</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn-enviar">Cadastrar Organização</button>
+            </form>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
