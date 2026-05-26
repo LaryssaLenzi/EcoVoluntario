@@ -344,3 +344,21 @@ h2 {
     font-size: 0.85rem;
     color: #a5d6a7;
 }
+/* Redes Sociais do Footer */
+.footer-redes {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.footer-redes a {
+    color: #c8e6c9;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s;
+}
+
+.footer-redes a:hover {
+    color: white;
+}
