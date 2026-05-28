@@ -7,7 +7,7 @@ Plataforma web para conectar voluntários a ações ambientais no Espírito Sant
 - Igor Vinicius
 - Israel Andrieta
 - Cauê Nicanor
-- Rafael Abdalla
+- Rafael Delfino
 
 ## Funcionalidades:
 - Listagem de ações ambientais por cidade
