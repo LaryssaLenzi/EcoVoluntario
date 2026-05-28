@@ -112,3 +112,22 @@ if (btnTema) {
         }
     });
 }
+
+const campoBusca = document.getElementById('busca-texto');
+
+if (campoBusca) {
+    campoBusca.addEventListener('input', function() {
+        const termoBusca = this.value.toLowerCase();
+        const cards = document.querySelectorAll('.card');
+
+        cards.forEach(card => {
+            const titulo = card.querySelector('h3').innerText.toLowerCase();
+            
+            if (titulo.includes(termoBusca)) {
+                card.style.display = 'block';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    });
+}
