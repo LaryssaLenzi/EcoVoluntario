@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato - EcoVoluntário</title>
+    <link rel="stylesheet" href="style.css">
+   
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">🌱 EcoVoluntário</a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="active">Voluntários</a></li>
+                <li><a href="instituicao.html">Para Instituições</a></li>
+                <li><a href="fotos.html">Fotos</a></li> 
+            </ul>
+            <button id="btn-tema">🌓</button>
+        </div>
+    </nav>
+
+    <!-- CONTAINER DA PÁGINA -->
+    <main class="container-contato">
+        
+        <!-- Bloco Informativo -->
+        <section class="info-contato">
+            <h2>Entre em Contato</h2>
+            <p>Tem alguma dúvida sobre as ações ecológicas, deseja cadastrar sua instituição ou precisa de suporte técnico? Mande uma mensagem para a nossa equipe!</p>
+            
+            <ul class="detalhes-lista">
+                <li><span>📍</span> Endereço Institucional, 123 - Centro</li>
+                <li><span>📞</span> (11) 4002-8922</li>
+                <li><span>✉️</span> contato@ecovoluntario.com</li>
+                <li><span>🕒</span> Seg a Sex: 9h às 18h</li>
+            </ul>
+        </section>
+
+        <!-- Bloco do Formulário -->
+        <section class="formulario-contato">
+            <h3>Envie uma mensagem</h3>
+            <form id="formContato">
+                <div class="grupo-campo">
+                    <label for="nome">Nome Completo</label>
+                    <input type="text" id="nome" name="nome" placeholder="Seu nome" required>
+                </div>
+
+                <div class="grupo-campo">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email" placeholder="seu.email@exemplo.com" required>
+                </div>
+
+                <div class="grupo-campo">
+                    <label for="assunto">Assunto</label>
+                    <input type="text" id="assunto" name="assunto" placeholder="Ex: Cadastro de Instituição, Dúvidas..." required>
+                </div>
+
+                <div class="grupo-campo">
+                    <label for="mensagem">Mensagem</label>
+                    <textarea id="mensagem" name="mensagem" placeholder="Digite sua mensagem detalhada aqui..." required></textarea>
+                </div>
+
+                <button type="submit" class="btn-enviar">Enviar Mensagem</button>
+            </form>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-coluna">
+                <h3>🌱 EcoVoluntário</h3>
+                <p>Conectando pessoas para transformar o meio ambiente através do voluntariado.</p>
+            </div>
+            <div class="footer-coluna">
+                <h4>Links Rápidos</h4>
+                <ul>
+                    <li><a href="index.html">Voluntários</a></li>
+                    <li><a href="instituicao.html">Para Instituições</a></li>
+                </ul>
+            </div>
+            <div class="footer-coluna">
+                <h4>Contato</h4>
+                <p>Espírito Santo, Brasil</p>
+                <div class="footer-redes">
+                    <a href="contato.html">Contato</a>
+
+                    <a href="#">Instagram</a>
+                    <a href="#">Facebook</a>
+                    <a href="#">WhatsApp</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 EcoVoluntário. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
