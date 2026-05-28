@@ -131,3 +131,19 @@ if (campoBusca) {
         });
     });
 }
+
+const botoesShare = document.querySelectorAll('.btn-share');
+
+botoesShare.forEach(botao => {
+    botao.addEventListener('click', function() {
+        const cardPai = this.closest('.card');
+        const tituloAcao = cardPai.querySelector('h3').innerText;
+        const cidadeAcao = cardPai.getAttribute('data-cidade');
+        
+        const textoParaCopiar = `Olha essa ação incrível no EcoVoluntário: ${tituloAcao} em ${cidadeAcao}! Participe!`;
+        
+        navigator.clipboard.writeText(textoParaCopiar).then(() => {
+            alert('Texto da ação copiado! Agora é só colar para seus amigos.');
+        });
+    });
+});
