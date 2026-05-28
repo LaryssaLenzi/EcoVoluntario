@@ -124,7 +124,73 @@ if (campoBusca) {
 
         cards.forEach(card => {
             const titulo = card.querySelector('h3').innerText.toLowerCase();
-            
+            // ==========================================
+// 5. MODO ESCURO
+// ==========================================
+const btnTema = document.getElementById('btn-tema');
+
+if (btnTema) {
+    btnTema.addEventListener('click', function () {
+        document.body.classList.toggle('dark-mode');
+        btnTema.innerText = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
+
+        //  MELHORIA: Toast ao trocar o tema
+        const modo = document.body.classList.contains('dark-mode') ? 'escuro 🌙' : 'claro ☀️';
+        mostrarToast(`Modo ${modo} ativado!`, 2000);
+    });
+}
+
+
+// ==========================================
+// 6. BUSCA POR TEXTO
+// ==========================================
+const campoBusca = document.getElementById('busca-texto');
+const msgVazia = document.getElementById('mensagem-sem-resultados');
+
+if (campoBusca) {
+    campoBusca.addEventListener('input', function () {
+        const termoBusca = this.value.toLowerCase();
+        const cards = document.querySelectorAll('.card');
+        let temResultado = false;
+
+        cards.forEach(card => {
+            const titulo = card.querySelector('h3').innerText.toLowerCase();
+
+            if (titulo.includes(termoBusca)) {
+                card.style.display = 'block';
+                temResultado = true;
+            } else {
+                card.style.display = 'none';
+            }
+        });
+
+        if (msgVazia) {
+            msgVazia.style.display = temResultado ? 'none' : 'block';
+        }
+    });
+}
+
+
+// ==========================================
+// 7. BOTÃO COMPARTILHAR
+// ==========================================
+const botoesShare = document.querySelectorAll('.btn-share');
+
+botoesShare.forEach(botao => {
+    botao.addEventListener('click', function () {
+        const cardPai = this.closest('.card');
+        const tituloAcao = cardPai.querySelector('h3').innerText;
+        const cidadeAcao = cardPai.getAttribute('data-cidade');
+
+        const textoParaCopiar = `Olha essa ação incrível no EcoVoluntário: ${tituloAcao} em ${cidadeAcao}! Participe!`;
+
+        navigator.clipboard.writeText(textoParaCopiar).then(() => {
+            //  MELHORIA: Toast no lugar do alert
+            mostrarToast('📋 Texto copiado! Agora é só colar para seus amigos.', 3000);
+        });
+    });
+});
+
             if (titulo.includes(termoBusca)) {
                 card.style.display = 'block';
                 temResultado = true; 
@@ -149,13 +215,69 @@ botoesShare.forEach(botao => {
     botao.addEventListener('click', function() {
         const cardPai = this.closest('.card');
         const tituloAcao = cardPai.querySelector('h3').innerText;
-        const cidadeAcao = cardPai.getAttribute('data-cidade');
-        
-        const textoParaCopiar = `Olha essa ação incrível no EcoVoluntário: ${tituloAcao} em ${cidadeAcao}! Participe!`;
-        
-        navigator.clipboard.writeText(textoParaCopiar).then(() => {
-            alert('Texto da ação copiado! Agora é só colar para seus amigos.');
+        const cidadeAcao = cardPai.getAttribute('data-cidade'); 
         });
     });
+
+
+    // ==========================================
+//  MELHORIA: MENU HAMBÚRGUER (MOBILE)
+// ==========================================
+const menuToggle = document.getElementById('menu-toggle');
+const navMenu = document.querySelector('.nav-menu');
+
+if (menuToggle && navMenu) {
+    menuToggle.addEventListener('click', function () {
+        navMenu.classList.toggle('aberto');
+    });
+
+    // Fecha o menu ao clicar em um link
+    navMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            navMenu.classList.remove('aberto');
+        });
+    });
+}
+
+
+// ==========================================
+//  MELHORIA: SCROLL SUAVE NOS LINKS DA NAVBAR
+// ==========================================
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', function (e) {
+        const alvo = document.querySelector(this.getAttribute('href'));
+        if (alvo) {
+            e.preventDefault();
+            alvo.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    });
 });
+
+
+// ==========================================
+//  MELHORIA: ANIMAÇÃO DE ENTRADA DOS CARDS
+//    ao aparecerem na tela (Intersection Observer)
+// ==========================================
+const cardsParaAnimar = document.querySelectorAll('.card');
+
+if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    cardsParaAnimar.forEach(card => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(30px)';
+        card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+        observer.observe(card);
+    });
+}
+
+
 
