@@ -289,6 +289,21 @@ h2 {
     cursor:pointer;
     margin-left:15px;
 }
+.btn-share {
+    background: transparent;
+    border: 1px solid #81c784;
+    color: #2e7d32;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 5px;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.btn-share:hover {
+    background-color: #e8f5e9;
+}
 
    /*modo escuro*/
 body.dark-mode {
@@ -314,6 +329,16 @@ body.dark-mode .card h3,
 body.dark-mode h1, 
 body.dark-mode h2 {
     color: #81c784;
+}
+
+.msg-vazia {
+    display: none; /* Fica escondido até o JS mandar aparecer */
+    text-align: center;
+    color: #666;
+    margin-top: 30px;
+    font-size: 1.2rem;
+    font-style: italic;
+    width: 100%;
 }
 /* Footer */
 .footer {

@@ -40,6 +40,9 @@
                     <option value="Vila Velha">Vila Velha</option>
                     <option value="Serra">Serra</option>
                 </select>
+                <label for="busca-texto" style="margin-left: 15px;">Buscar:</label>
+                <input type="text" id="busca-texto" placeholder="Ex: Plantio, Limpeza...">
+
             </div>
 
             <div class="cards-grid" id="cards-grid">
@@ -50,6 +53,7 @@
                     <p><strong>Local:</strong> Entorno do Parque Nacional</p>
                     <p>Plantio de árvores nativas para proteção de nascentes da região.</p>
                     <button class="btn-card" data-acao-id="reflorestamento-alegre">Quero me inscrever</button>
+                    <button class="btn-share">🔗 Copiar Link da Ação</button>
                 </div>
 
                 <div class="card" data-cidade="Alegre">
@@ -59,6 +63,7 @@
                     <p><strong>Local:</strong> Praça Seis de Janeiro</p>
                     <p>Mutirão de conscientização sobre o descarte correto de resíduos.</p>
                     <button class="btn-card" data-acao-id="coleta-alegre">Quero me inscrever</button>
+                    <button class="btn-share">🔗 Copiar Link da Ação</button>
                 </div>
 
                 <div class="card" data-cidade="Vitória">
@@ -68,6 +73,7 @@
                     <p><strong>Local:</strong> Praia de Camburi</p>
                     <p>Retirada de microplásticos e conscientização dos banhistas.</p>
                     <button class="btn-card" data-acao-id="praia">Quero me inscrever</button>
+                    <button class="btn-share">🔗 Copiar Link da Ação</button>
                 </div>
 
                 <div class="card" data-cidade="Vila Velha">
@@ -77,6 +83,7 @@
                     <p><strong>Local:</strong> Parque Botânico</p>
                     <p>Reflorestamento de áreas degradadas com espécies nativas.</p>
                     <button class="btn-card" data-acao-id="plantio">Quero me inscrever</button>
+                    <button class="btn-share">🔗 Copiar Link da Ação</button>
                 </div>
 
                 <div class="card" data-cidade="Serra">
@@ -86,8 +93,12 @@
                     <p><strong>Local:</strong> Centro Comunitário</p>
                     <p>Aprenda a separar resíduos corretamente e criar compostagem.</p>
                     <button class="btn-card" data-acao-id="reciclagem">Quero me inscrever</button>
+                    <button class="btn-share">🔗 Copiar Link da Ação</button>
                 </div>
             </div>
+
+            <p id="mensagem-sem-resultados" class="msg-vazia">Nenhuma ação encontrada para esta busca. 😥</p>
+
         </section>
     </main>
 
