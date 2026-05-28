@@ -279,5 +279,14 @@ if ('IntersectionObserver' in window) {
     });
 }
 
+document.getElementById('formContato').addEventListener('submit', function(e) {
+    e.preventDefault(); // Impede a página de recarregar
+    
+    // Aqui você integraria com o backend futuramente
+    alert('Formulário enviado com sucesso! Entraremos em contato em breve.');
+    
+    this.reset(); // Limpa os campos do formulário
+});
+
 
 
