@@ -98,3 +98,17 @@ if (formInstituicao) {
         this.reset();
     });
 }
+
+// modo escuro
+const btnTema = document.getElementById('btn-tema');
+
+if (btnTema) {
+    btnTema.addEventListener('click', function() {
+        document.body.classList.toggle('dark-mode');
+        if (document.body.classList.contains('dark-mode')) {
+            btnTema.innerText = '☀️';
+        } else {
+            btnTema.innerText = '🌙';
+        }
+    });
+}
