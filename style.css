@@ -62,12 +62,12 @@ body {
 
 .nav-menu a:hover, .nav-menu a.active {
     color: white;
-    background-color: #2e7d32;
+    background-color: #256e29;
 }
 
 /*Cabeçalho*/
 header {
-    background-color: #2e7d32;
+    background-color: #1b5e20;
     color: white;
     text-align: center;
     padding: 40px 20px;
@@ -503,13 +503,14 @@ body.dark-mode h2 {
 /* ==========================================
    BOTÕES EXTRAS
    ========================================== */
-.btn-tema {
-    background: none;
+#btn-tema {
+    background: transparent;
     border: none;
     font-size: 1.5rem;
     cursor: pointer;
     margin-left: 15px;
     transition: transform 0.3s ease;
+    outline: none;
 }
 
 .btn-tema:hover {
