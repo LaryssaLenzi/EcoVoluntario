@@ -114,23 +114,34 @@ if (btnTema) {
 }
 
 const campoBusca = document.getElementById('busca-texto');
+const msgVazia = document.getElementById('mensagem-sem-resultados'); 
 
 if (campoBusca) {
     campoBusca.addEventListener('input', function() {
         const termoBusca = this.value.toLowerCase();
         const cards = document.querySelectorAll('.card');
+        let temResultado = false; 
 
         cards.forEach(card => {
             const titulo = card.querySelector('h3').innerText.toLowerCase();
             
             if (titulo.includes(termoBusca)) {
                 card.style.display = 'block';
+                temResultado = true; 
             } else {
                 card.style.display = 'none';
             }
         });
+        if (msgVazia) {
+            if (temResultado) {
+                msgVazia.style.display = 'none';
+            } else {
+                msgVazia.style.display = 'block';
+            }
+        }
     });
 }
+
 
 const botoesShare = document.querySelectorAll('.btn-share');
 
@@ -147,3 +158,4 @@ botoesShare.forEach(botao => {
         });
     });
 });
+

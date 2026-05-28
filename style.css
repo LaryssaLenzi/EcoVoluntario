@@ -330,6 +330,16 @@ body.dark-mode h1,
 body.dark-mode h2 {
     color: #81c784;
 }
+
+.msg-vazia {
+    display: none; /* Fica escondido até o JS mandar aparecer */
+    text-align: center;
+    color: #666;
+    margin-top: 30px;
+    font-size: 1.2rem;
+    font-style: italic;
+    width: 100%;
+}
 /* Footer */
 .footer {
     background-color: #1b5e20;
